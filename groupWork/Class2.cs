@@ -14,6 +14,7 @@ namespace groupWork
         private string destination;
         private DateTime shipmentDate;
 
+
         // Constructor
         public Shipment(int shipmentId, string destination, DateTime shipmentDate)
         {
