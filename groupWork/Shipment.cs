@@ -11,16 +11,20 @@ namespace groupWork
     {
         // Private variables
         private int shipmentId;
-        private string destination;
+        private string orderID;
+        private string shipmentAddress;
         private DateTime shipmentDate;
+        private string status;
 
 
         // Constructor
-        public Shipment(int shipmentId, string destination, DateTime shipmentDate)
+        public Shipment(int shipmentId, string orderID, string shipmentAddress, DateTime shipmentDate, string status)
         {
             this.shipmentId = shipmentId;
-            this.destination = destination;
+            this.orderID = orderID;
+            this.shipmentAddress = shipmentAddress;
             this.shipmentDate = shipmentDate;
+            this.status = status;
         }
 
         // Public properties 
@@ -30,10 +34,15 @@ namespace groupWork
             set { shipmentId = value; }
         }
 
-        public string Destination
+        public string OrderID
         {
-            get { return destination; }
-            set { destination = value; }
+            get { return orderID; }
+            set { orderID = value; }
+        }
+        public string ShipmentAddress
+        {
+            get { return shipmentAddress; }
+            set { shipmentAddress = value; }
         }
 
         public DateTime ShipmentDate
@@ -41,13 +50,21 @@ namespace groupWork
             get { return shipmentDate; }
             set { shipmentDate = value; }
         }
+        public string Status
+        { 
+            get { return status; } 
+            set { status = value; } 
+        }
 
-        // Other methods (you can add more as needed)
-        public void Ship()
+        
+        public void createShipment()
         {
-            // Implement shipment logic here
-            Console.WriteLine($"Shipping order {shipmentId} to {destination} on {shipmentDate.ToShortDateString()}...");
-            // Additional logic goes here
+            Console.WriteLine($"Shipping order {ShipmentId} to {ShipmentAddress} on {shipmentDate.ToShortDateString()}...");
+        }
+
+        public void trackShipment()
+        { 
+        Console.WriteLine($"Shipping order: {ShipmentId}, Status: {Status}");
         }
     }
 }

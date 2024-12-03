@@ -12,14 +12,12 @@ namespace groupWork
     {
         // Private variables
         private int orderId;
-        private string customerName;
-        private decimal orderAmount;
+        private double orderAmount;
 
         // Constructor
-        public Order(int orderId, string customerName, decimal orderAmount)
+        public Order(int orderId, double orderAmount)
         {
             this.orderId = orderId;
-            this.customerName = customerName;
             this.orderAmount = orderAmount;
         }
 
@@ -30,25 +28,26 @@ namespace groupWork
             set { orderId = value; }
         }
 
-        public string CustomerName
-        {
-            get { return customerName; }
-            set { customerName = value; }
-        }
-
-        public decimal OrderAmount
+    
+        public double OrderAmount
         {
             get { return orderAmount; }
             set { orderAmount = value; }
         }
 
-        // Other methods (you can add more as needed)
-        public void ProcessOrder()
+
+        public void addItem()
         {
-            // Implement order processing logic here
-            Console.WriteLine($"Processing order {orderId} for customer {customerName}...");
-            // Additional logic goes here
+            Console.WriteLine("Select item to add to  order");
+        }
+
+        public void removeItem()
+        {
+            Console.WriteLine("Select item to add to order");
+        }
+        public void checkOut()
+        {
+            Console.WriteLine($"OrderID: {OrderId}, Your total is: {OrderAmount}. Please proceed to payment ");
         }
     }
-    
 }
